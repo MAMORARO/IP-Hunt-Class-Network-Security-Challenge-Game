@@ -37,8 +37,29 @@ class GameClient:
                 sys.exit()
 
     def Login(self):
+          
+         self.socket.send(self.user_name.encode())
+         self.socket.send(self.password.encode())
+
+         self.response = self.socket.recv(1024).decode() # decode response from the server into string data type.
+
+         try:
+             if "successful" in self.response or "welcome" in self.response:
+                   print("Login was sucessful")
+             else:
+                   print("login  was unsuccessful.")
+                   self.socket.close()
+                   sys.exit()
+         except ConnectionResetError:
+                    print("server has disconnected.")
+                    self.socket.close()
+                    sys.exit()
+
+              
+             
+
          
-         
+
 
 
 
