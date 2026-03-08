@@ -5,10 +5,10 @@ import sys
 class GameClient:
 
         
-    server_ip_address=str(input(" Enter IP Address  e.g  :"))
+    server_ip_address=(input(" Enter IP Address  e.g  :"))
     port_number =int(input("Enter Port Number e.g :"))
     user_name=str(input("Enter Your Username e.g :"))
-    password=getpass.getpass("Enter Your password e.g :")
+    password=getpass.getpass("Enter Your password e.g  FirstInitial (UPPERCASE) + surname (lowercase) + _2026 :")
     
 
     def __init__(self,server_ip_address,port_number,user_name,password):
